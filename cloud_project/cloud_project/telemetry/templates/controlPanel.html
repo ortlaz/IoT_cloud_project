@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+
+
+{% block links %}
+
+{% load compress static %}
+{% compress css %}
+	<link type="text/x-scss" href="{% static 'css/notes.scss' %}" rel="stylesheet" media="screen">
+{% endcompress %}
+	<link type="text/css" href="{% static 'css/controlPanel.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<main>
+{% if request.user.is_authenticated %}
+	<div class="user-info">
+
+		<p>Вы вошли, как:</p>
+		<p>{{ cur_user.name }}
+			<!-- <input type="submit" value="Выход" class="exit"  href="{% url 'singin' %}"> -->
+			<a href="{% url 'singin' %}" class="btn">Выход</a>
+		</p>
+	</div>
+	<div class="big-table">
+		<table class="table-3">
+		<thead>
+			<tr>
+				<th>
+					ID контейнера
+				</th>
+				<th>
+					Напоненность контейнера
+				</th>
+				<th>
+					Состояние контейнера
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for id in ids %}
+			<tr>
+				<td data-label="id">
+					{{ id }}
+				</td>
+				<td data-label="Напоненность" id="{{ id }}" class="dest">
+				</td>
+				<td data-label="Состояние" id_num="{{ id }}" class="cap">
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	</div>
+</main>
+<div id="notes">
+	  <div class="note-item" data-type="info" role="alert">
+      <div class="note-item-text"></div>
+      <button class="note-item-btn" role="button" aria-label="Скрыть"></button>
+    </div>
+	{% load static %}
+<script type="text/javascript" src="{% static 'scr/get_alarm.js' %}"></script>
+</div>
+<script type="text/javascript" src="{% static 'scr/get_data.js' %}"></script>
+<script type="text/javascript" src="{% static 'scr/get_warnings.js' %}"></script>
+{% else %}
+{% compress css %}
+	<link type="text/css" href="{% static 'css/error.css' %}" rel="stylesheet">
+{% endcompress %}
+<h1>Упс! Что-то пошло не так :с</h1>
+	<div class="buttons">
+		<div id="button">
+			<a href="{% url 'singin' %}">Вход</a>
+		</div>
+		<div id="button">	
+			<a href="{% url 'singup' %}">Регистрация</a>
+		</div>
+	</div>	
+{% endif %}
+{% endblock %}
+

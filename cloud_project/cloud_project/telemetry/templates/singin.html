@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% load static %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/singin.css' %}">
+{% endblock %}
+
+
+{% block title %}<title>Login</title>{% endblock %}
+
+{% block content %}
+
+ 
+<form method="POST" class="login" id="form"> 
+<h1>Вход</h1> 
+ {% for message in messages %}
+    <div class="error-message">{{ message }}</div>
+  {% endfor %}
+  <div class="fields">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <p><input type="submit" value="Вход" class="btn"></p>
+  </div>
+</form>
+{% endblock %}

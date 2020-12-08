@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% load static %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/error.css' %}">
+{% endblock %}
+
+
+{% block title %}<title>Login</title>{% endblock %}
+
+{% block content %}
+<main>
+	<h1>Упс! Что-то пошло не так :с</h1>
+	<div class="buttons">
+		<div id="button">
+			<a href="{% url 'singin' %}">Вход</a>
+		</div>
+		<div id="button">	
+			<a href="{% url 'singup' %}">Регистрация</a>
+		</div>
+	</div>
+</main>
+{% endblock %}

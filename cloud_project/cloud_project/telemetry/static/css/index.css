@@ -1,0 +1,97 @@
+.index-container{
+	margin:120px 30px;
+	color: white;
+}
+
+.index-container h1{
+	text-align: center;
+	font-size: 60px;
+	text-shadow: 2px 2px 2px grey;
+}
+
+.buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	max-width: 60%;
+	min-width: 300px;
+	margin: 20% auto;
+	flex-wrap: wrap;
+}
+
+a{
+	color: white;
+}
+
+#button{
+	flex-grow: 2;
+	margin: 10px 30px;
+	padding: 20px 50px;
+	background-color: #75b870;
+	font-size: 25px;
+	border: 5px solid;
+	opacity: 80%;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px black;
+	max-width: 200px;
+	text-align: center;
+}
+
+section{
+	height: 100vh;
+}
+
+main{
+	display: flex;
+	flex-direction: column;
+}
+
+.description-container{
+	margin:100px 30px;
+	color: #75b870;
+}
+
+.description-container h1, h3{
+	text-shadow: 1px 1px 1px;
+}
+
+#descr-con{
+	height: 70vh;
+	padding: 0 0 120px 0;
+}
+
+#index-con{
+	background-size: cover;
+	background-image: url('https://499ioen9wh92k2blb3elevg9-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/shutterstock_489360091.jpg');
+}
+
+
+.descr-els{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.descr-el{
+	margin: 80px 0px 20px 0px;
+	text-align: center;
+	font-size: 18px;
+	flex-grow: 1;
+	max-width: 20%;
+	min-width: 300px;
+}
+
+.description-container h1{
+	text-align: center;
+	font-size: 38px;
+}
+
+.descr-el p{
+	padding: 10px 0;
+	font-style: italic;
+}
+
+body{
+	background-color: white !important;
+}

@@ -1,0 +1,77 @@
+/* line 1, telemetry/static/css/notes.scss */
+#notes {
+  /*  &:empty { display: none; }*/
+  position: fixed;
+  top: 1em;
+  width: 100%;
+  cursor: default;
+  transition: height .45s ease-in-out;
+  pointer-events: none;
+  z-index: 1; }
+  /* line 11, telemetry/static/css/notes.scss */
+  #notes .note-item {
+    max-height: 12em;
+    opacity: 1;
+    will-change: opacity, transform;
+    transition: all .2s linear;
+    z-index: 2;
+    pointer-events: auto;
+    display: flex;
+    align-content: flex-start;
+    max-width: 20em;
+    font: inherit;
+    line-height: 1.25em;
+    color: #fff;
+    margin: 0 auto 1em auto;
+    transform: translateZ(0);
+    padding: .75em 1em; }
+    @media all and (max-width: 30em) {
+      /* line 11, telemetry/static/css/notes.scss */
+      #notes .note-item {
+        width: 75vw;
+        max-width: none; } }
+    /* line 34, telemetry/static/css/notes.scss */
+    #notes .note-item[data-show="false"] {
+      pointer-events: none;
+      opacity: 0 !important;
+      max-height: 0 !important;
+      margin-bottom: 0 !important; }
+    /* line 41, telemetry/static/css/notes.scss */
+    #notes .note-item[data-type="error"] {
+      background-color: #fb6542;
+      animation: shake 0.54s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+    /* line 46, telemetry/static/css/notes.scss */
+    #notes .note-item .note-item-text {
+      flex: auto;
+      -webkit-flex: auto;
+      -moz-flex: auto;
+      -ms-flex: auto;
+      padding-right: .5em;
+      max-width: calc(100% - 1.25em); }
+    /* line 55, telemetry/static/css/notes.scss */
+    #notes .note-item .note-item-btn {
+      width: 1.25em;
+      height: 1.25em;
+      cursor: pointer;
+      transition: opacity .2s; }
+      /* line 60, telemetry/static/css/notes.scss */
+      #notes .note-item .note-item-btn:hover {
+        opacity: .6; }
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    -webkit-transform: translate3d(-1px, 0, 0);
+    -ms-transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(2px, 0 0);
+    -webkit-transform: translate3d(2px, 0, 0);
+    -ms-transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+    -webkit-transform: translate3d(-4px, 0, 0);
+    -ms-transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+    -webkit-transform: translate3d(4px, 0, 0);
+    -ms-transform: translate3d(4px, 0, 0); } }

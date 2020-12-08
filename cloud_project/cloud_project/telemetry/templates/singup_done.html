@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% load static %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/singup_done.css' %}">
+{% endblock %}
+
+
+{% block title %}<title>Login</title>{% endblock %}
+
+{% block content %}
+<main>
+	<h1>Поздравляем, вы зарегистрированы. Можете войти в систему.</h1>
+	<div class="buttons">
+		<div id="button">
+			<a href="{% url 'singin' %}">Вход</a>
+		</div>
+	</div>
+
+</div>
+</main>
+{% endblock %}

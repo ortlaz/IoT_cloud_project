@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+	{% block title %}<title>IoT System</title>{% endblock %}
+	{% load static %}
+	{% block links%}
+<link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">	
+	{% endblock %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">	
+<!-- 	{% load static %} -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+ {% block content %}
+<main>
+	<section id="index-con">
+	<div class = "index-container">
+		<h1 id="header-phrase">Smart Waste Collection System</h1>
+		<div class = "buttons">
+			<div id="button">
+				<a href="{% url 'singin' %}">Вход</a>
+			</div>
+			<div id="button">	
+				<a href="{% url 'singup' %}">Регистрация</a>
+			</div>
+		</div>
+	</div> 
+	</section>
+	<section id="descr-con">
+	<div class = "description-container">
+		<h1>Что я умею?</h1>
+		<div class="descr-els">
+			<div class="descr-el" id="el-1">
+			<h3>Мониторинг наполеннности</h3>
+			<p>Система отслеживает состояние контейнера. Как только содержимое достигнет критической точки, оператор будет осведомлён об этом.</p>
+		</div>
+		<div class="descr-el" id="el-2">
+			<h3>Автоматическая крышка</h3>
+			<p>Пачкать руки больше не придется. Благодаря системе, при приближении к крышке контейнера, она откроется сама.</p>
+		</div>
+			<div class="descr-el" id="el-3">
+				<h3>Уведомления о ЧС</h3>
+				<p>Мы заботимся о безопасности окружающих. В случае возникновения возгорания содержимого контейнера, оператор системы будет мгновенно уведомлен об этом.</p>
+			</div>
+		</div>
+		</div>
+	</div> 
+	</section>
+
+</main>
+ {% endblock %}
+</body>
+
+</html>

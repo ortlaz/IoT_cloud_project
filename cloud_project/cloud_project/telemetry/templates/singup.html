@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}<title>Sinup</title>{% endblock %}
+
+{% load static %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/singup.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="POST" class="reg" id="form">
+<h1>Регистрация</h1> 
+	{% csrf_token %}
+	{{ user_form.as_p }}
+	<p><input type="submit" value="Зарегистрироваться" class="btn"></p>
+</form>
+{% endblock %}
